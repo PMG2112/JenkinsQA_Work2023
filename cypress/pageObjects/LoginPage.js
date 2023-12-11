@@ -1,4 +1,4 @@
-import { each } from "cypress/types/bluebird";
+
 import DashboardPage from "./DashboardPage";
 
 class LoginPage {
