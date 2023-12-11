@@ -18,7 +18,7 @@ describe('Sign in to Jenkins',() => {
    beforeEach(() => {
        cy.visit(`${baseUrl}/login`)
    })
-it.only('TC_01.01| Sign in to Jenkins| valid login and password', ()=>{
+it('TC_01.01| Sign in to Jenkins| valid login and password', ()=>{
  loginPage
  .typeLogin(loginPageData.vavidUserName)
  .typePassword(loginPageData.validPassword)
@@ -35,13 +35,13 @@ it('TC_01.02.01|Sign in to Jenkins| invalid login and valid password',()=>{
  .verifyErrorMessageText(loginPageData.errorMessage)
  .verifyErrorColor()
 })
-it.skip('TC_01.02.02|Sign in to Jenkins| valid login and invalid password',()=>{
+it('TC_01.02.02|Sign in to Jenkins| valid login and invalid password',()=>{
    loginPage
-//  .typeLogin(loginPageData.vavidUserName)
+ .typeLogin(loginPageData.vavidUserName)
  .typePassword(invalidPassword)
  .clickRemembeMe()
-//  .clickButtonError()
-//  .verifyErrorMessageText(loginPageData.errorMessage)
-//  .verifyErrorColor()
+ .clickButtonError()
+ .verifyErrorMessageText(loginPageData.errorMessage)
+ .verifyErrorColor()
 })
 })

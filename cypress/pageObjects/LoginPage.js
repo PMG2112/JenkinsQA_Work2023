@@ -4,7 +4,7 @@ import DashboardPage from "./DashboardPage";
 class LoginPage {
   getSignIn = () => cy.get(".app-sign-in-register__content-inner>h1");
   getTwoLabelPage = () => cy.get(".app-sign-in-register__form-label");
-  getCheckBoxRemembeMe = () => cy.get('.jenkins-checkbox > label');
+  getCheckBoxRemembeMe = () => cy.get('#remember_me');
   getTextRemembeMe = () => cy.get(".jenkins-checkbox");
   getLogIn = () => cy.get("#j_username");
   getPassword = () => cy.get("#j_password");
@@ -21,7 +21,7 @@ class LoginPage {
    return this
   }
   clickRemembeMe(){
-   this.getCheckBoxRemembeMe().click()
+   this.getCheckBoxRemembeMe().check({force:true}).should('be.checked')
    return this
   }
   clickButtonOK(){
