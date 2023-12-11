@@ -21,7 +21,7 @@ class LoginPage {
    return this
   }
   clickRemembeMe(){
-   this.getCheckBoxRemembeMe()//.check({ force: true })
+   this.getCheckBoxRemembeMe().click()
    return this
   }
   clickButtonOK(){

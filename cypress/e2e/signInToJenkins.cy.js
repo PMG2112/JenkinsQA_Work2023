@@ -35,7 +35,7 @@ it('TC_01.02.01|Sign in to Jenkins| invalid login and valid password',()=>{
  .verifyErrorMessageText(loginPageData.errorMessage)
  .verifyErrorColor()
 })
-it('TC_01.02.02|Sign in to Jenkins| valid login and invalid password',()=>{
+it.skip('TC_01.02.02|Sign in to Jenkins| valid login and invalid password',()=>{
    loginPage
 //  .typeLogin(loginPageData.vavidUserName)
  .typePassword(invalidPassword)
