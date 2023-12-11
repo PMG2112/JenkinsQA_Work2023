@@ -1,0 +1,9 @@
+{
+   "vavidUserName": "PMG-21",
+   "validPassword": "18215",
+   "errorMessage": "Invalid username or password",
+   "twoLabel": {
+      "one": "Username",
+      "two": "Password"
+   }   
+}
