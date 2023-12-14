@@ -9,8 +9,8 @@ describe('Sign in to Jenkins',() => {
    const loginPage = new LoginPage;
    const port = Cypress.env('local.port');
    const host = Cypress.env('local.host');
-   const validAdminName = Cypress.env('local.admin.username');
-   const validAdminPass = Cypress.env('local.admin.password');
+   // const validAdminName = Cypress.env('local.admin.username');
+   // const validAdminPass = Cypress.env('local.admin.password');
    const baseUrl = `http://${host}:${port}`;
    let invalidUserName = Math.random().toString(36).substring(7);
    let invalidPassword = Math.random().toString(36).substring(7);
@@ -21,15 +21,19 @@ describe('Sign in to Jenkins',() => {
 it('TC_01.01| Sign in to Jenkins| valid login and password', ()=>{
  loginPage
  .typeLogin(loginPageData.vavidUserName)
+ .verifyLogin(loginPageData.vavidUserName)
  .typePassword(loginPageData.validPassword)
+ .verifyPassword(loginPageData.validPassword)
  .clickRemembeMe()
  .clickButtonOK()
  .verifyWelcomeMessage(dashboardPageData.welcome)
 })
 it('TC_01.02.01|Sign in to Jenkins| invalid login and valid password',()=>{
    loginPage
- .typeLogin(invalidUserName)
+ .typeLogin(invalidPassword)
+ .verifyLogin(invalidUserName)
  .typePassword(loginPageData.validPassword)
+ .verifyPassword(loginPageData.validPassword)
  .clickRemembeMe()
  .clickButtonError()
  .verifyErrorMessageText(loginPageData.errorMessage)
@@ -38,7 +42,9 @@ it('TC_01.02.01|Sign in to Jenkins| invalid login and valid password',()=>{
 it('TC_01.02.02|Sign in to Jenkins| valid login and invalid password',()=>{
    loginPage
  .typeLogin(loginPageData.vavidUserName)
+ .verifyLogin(loginPageData.vavidUserName)
  .typePassword(invalidPassword)
+ .verifyPassword(invalidPassword)
  .clickRemembeMe()
  .clickButtonError()
  .verifyErrorMessageText(loginPageData.errorMessage)
