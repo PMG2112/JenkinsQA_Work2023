@@ -1,0 +1,10 @@
+{
+   "vavidUserName": "PMG-21",
+   "validPassword": "18215",
+   "errorMessage": "Invalid username or password",
+   "header": "Sign in to Jenkins",
+   "rememberMe": "Keep me signed in",
+   "twoLabel": ["Username","Пароль"],
+   "button": "Sign in",
+   "logo": "/static/6382e589/images/svgs/logo.svg"
+   }
