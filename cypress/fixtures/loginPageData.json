@@ -6,5 +6,7 @@
    "rememberMe": "Keep me signed in",
    "twoLabel": ["Username","Пароль"],
    "button": "Sign in",
-   "logo": "/static/6382e589/images/svgs/logo.svg"
+   "logo": "/static/6382e589/images/svgs/logo.svg",
+   "url": "login",
+   "urlError": "loginError"
    }

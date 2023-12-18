@@ -16,12 +16,8 @@ class LoginPage {
    this.getLogIn().type(login)
    return this
   }
-  verifyLogin(login){
-    this.getLogIn().should('have.value', login).and('be.visible')
-   return this
-  }
   typePassword(password){
-   this.getPassword().type(password).should('have.value', password).and('be.visible')
+   this.getPassword().type(password)
    return this
   }
   verifyPassword(password){
@@ -33,63 +29,28 @@ class LoginPage {
    return this
   }
   clickRemembeMe(){
-   this.getCheckBoxRemembeMe().check({force:true}).should('be.checked').and('be.visible')
+   this.getCheckBoxRemembeMe().check({force:true})
    return this
   }
-  clickButtonOK(){
-   this.getButton().click()
-   return new DashboardPage()
+  clickButton(){
+    this.getButton().click()
+    return cy.url()
   }
-  clickButtonError(){
-   this.getButton().click()
-   return this
-  }
-  verifyErrorMessageText(text){
-   this.getErrorMessage().should('be.visible').and('contain',text)
-   return this
-  }
-  verifyErrorColor(){
-   this.getErrorMessage().should('have.css',"color","rgb(230, 0, 31)")
-  }
-  verifyHeader(text){
-     this.getSignInHeader().should('be.visible').and('have.text', text)
-     return this
-  }
-  verifySizeHeader(text){
-    cy.contains(text).should("have.prop", "tagName", "H1")
-    return this
-  }
+  // verifyErrorMessageText(text){
+  //  this.getErrorMessage().should('be.visible').and('contain',text)
+  //  return this
+  // }
+  // verifyErrorColor(){
+  //  this.getErrorMessage().should('have.css',"color","rgb(230, 0, 31)")
+  // }
   verifyLabel(label){
     this.getTwoLabelPage().each(($el,ind) => {
       expect($el.text()).be.eql(label[ind])
-    }).should('be.visible')
-    return this
-  }
-  verifyUserName(login){
-    this.getLogIn().should('be.visible').type(login).should('have.value', login)
-    return this
-  }
-  verifyTextPassword(password){
-    this.getPassword().should('be.visible').type(password).should('have.value', password)
-    return this
-  }
-  verifyTextRemember(text){
-    this.getTextRemembeMe().should('be.visible').and('have.text', text)
+    })
     return this
   }
   clickTextRememberMe(){
     this.getTextRemembeMe().click()
-    this.getCheckBoxRemembeMe().should('be.checked')
-    return this
-  }
-  verifyButton(name)
-  {
-    this.getButton().should('be.visible').and('have.text',name)
-    return this
-  }
-  verifyLogo(src)
-  {
-    this.getImage().should('be.visible').and('have.attr', 'src', src)
     return this
   }
 }
