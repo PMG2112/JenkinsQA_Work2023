@@ -1,5 +1,18 @@
 {
-   "header": {},
+   "loginMenu": {
+     "dropDownMenu": [
+         "Builds", 
+         "Configure",
+         "My Views",
+         "Credentials"
+     ],
+     "loginMenuLink": [
+         "/builds",
+         "/configure",
+         "/my-views/view/all/",
+         "/credentials/"
+     ]
+   },
    "sideMenu": {
       "sidePanelName": [
           "New Item",
@@ -23,6 +36,11 @@
           "This folder is empty"
       ]
   },
+   "logoPicture": "/static/6382e589/images/svgs/logo.svg",
+   "logoTitle": "/static/6382e589/images/title.svg",
+   "searchText": "Search (CTRL+K)",
+   "linkOut": "log out",
    "welcome": "Welcome to Jenkins!",
-   "userName": "PMG"
+   "userName": "PMG",
+   "linkWindow": "Manage Jenkins"
 }

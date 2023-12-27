@@ -11,12 +11,12 @@ describe('Sign in to Jenkins', () => {
    const host = Cypress.env('local.host');
    // const validAdminName = Cypress.env('local.admin.username');
    // const validAdminPass = Cypress.env('local.admin.password');
-   const baseUrl = `http://${host}:${port}/`;
+   const dashboardUrl = `http://${host}:${port}/`;
    let invalidUserName = Math.random().toString(36).substring(7);
    let invalidPassword = Math.random().toString(36).substring(7);
 
    beforeEach(() => {
-      cy.visit(`${baseUrl}${loginPageData.url}`)
+      cy.visit(`${dashboardUrl}${loginPageData.url}`)
    })
    it('TC_01.02| Sign in to Jenkins| valid login and password', () => {
       loginPage
@@ -33,7 +33,7 @@ describe('Sign in to Jenkins', () => {
          .should('be.checked')
       loginPage
          .clickButton()
-         .should('eql', baseUrl)
+         .should('eql', dashboardUrl)
    })
    it('TC_01.03.01|Sign in to Jenkins| invalid login and valid password', () => {
       loginPage
@@ -50,7 +50,7 @@ describe('Sign in to Jenkins', () => {
          .should('be.checked')
       loginPage
          .clickButton()
-         .should('eql', `${baseUrl}${loginPageData.urlError}`)
+         .should('eql', `${dashboardUrl}${loginPageData.urlError}`)
       loginPage
          .getErrorMessage()
          .should('have.text', loginPageData.errorMessage)
@@ -72,7 +72,7 @@ describe('Sign in to Jenkins', () => {
          .should('be.checked')
       loginPage
          .clickButton()
-         .should('eql', `${baseUrl}${loginPageData.urlError}`)
+         .should('eql', `${dashboardUrl}${loginPageData.urlError}`)
       loginPage
          .getErrorMessage()
          .should('have.text', loginPageData.errorMessage)
@@ -94,7 +94,7 @@ describe('Sign in to Jenkins', () => {
          .should('be.checked')
       loginPage
          .clickButton()
-         .should('eql', `${baseUrl}${loginPageData.urlError}`)
+         .should('eql', `${dashboardUrl}${loginPageData.urlError}`)
       loginPage
          .getErrorMessage()
          .should('have.text', loginPageData.errorMessage)
@@ -102,3 +102,4 @@ describe('Sign in to Jenkins', () => {
          .should('have.css', "color", "rgb(230, 0, 31)")
    })
 })
+

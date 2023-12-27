@@ -21,6 +21,8 @@ import "cypress-real-events";
 
 Cypress.on('uncaught:exception', () => false)
 
+const dayjs = require('dayjs')
+Cypress.dayjs = dayjs
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

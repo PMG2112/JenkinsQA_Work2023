@@ -12,27 +12,27 @@ class LoginPage {
   getImage = () => cy.get('img');
   getErrorMessage = () => cy.get(".app-sign-in-register__error");
 
-  typeLogin(login){
-   this.getLogIn().type(login)
-   return this
+  typeLogin(login) {
+    this.getLogIn().type(login)
+    return this
   }
-  typePassword(password){
-   this.getPassword().type(password)
-   return this
+  typePassword(password) {
+    this.getPassword().type(password)
+    return this
   }
-  verifyPassword(password){
+  verifyPassword(password) {
     this.getPassword().then(($el) => {
       cy.log($el.val())
       const len = $el.val();
       expect(len.length).to.be.eql(password.length)
     })
-   return this
+    return this
   }
-  clickRemembeMe(){
-   this.getCheckBoxRemembeMe().check({force:true})
-   return this
+  clickRemembeMe() {
+    this.getCheckBoxRemembeMe().check({ force: true })
+    return this
   }
-  clickButton(){
+  clickButton() {
     this.getButton().click()
     return cy.url()
   }
@@ -43,13 +43,13 @@ class LoginPage {
   // verifyErrorColor(){
   //  this.getErrorMessage().should('have.css',"color","rgb(230, 0, 31)")
   // }
-  verifyLabel(label){
-    this.getTwoLabelPage().each(($el,ind) => {
+  verifyLabel(label) {
+    this.getTwoLabelPage().each(($el, ind) => {
       expect($el.text()).be.eql(label[ind])
     })
     return this
   }
-  clickTextRememberMe(){
+  clickTextRememberMe() {
     this.getTextRemembeMe().click()
     return this
   }
