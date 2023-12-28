@@ -90,7 +90,6 @@ class DashboardPage {
       this.getLeftSidePanel().eq(index).as('item')
       cy.get('@item').contains(itemName)
       cy.get('@item').click()
-
       return cy.url()
    }
    clickNewItemLink() {
@@ -104,6 +103,12 @@ class DashboardPage {
    clickCreateBuild() {
       this.getCreateBuild().click()
       return this
+   }
+   clickDropDownLoginItem(Name,index){
+      this.getDropDownLogin().eq(index).as('item')
+      cy.get('@item').contains(Name)
+      cy.get('@item').click()
+      return cy.url()
    }
 }
 export default DashboardPage;

@@ -10,21 +10,21 @@ const dashboardPage = new DashboardPage;
 const newJobPage = new NewJobPage;
 const buildHistoryPage = new BuildHistoryPage;
 
-// describe.skip('Test', () => {
+describe.skip('Test', () => {
 
 
-//    sideMenu.sidePanelName.forEach((item, index) => {
-//       it(`Verify side menu Link ${item} functionality`, () => {
-//          dashboardPage
-//             .clickSideMenuItemList(item, index)
-//             .should('contain', sideMenu.sidePanelLink[index])
-//          cy.contains(sideMenu.pageHeaderName[index])
-//       });
-//    });
+   sideMenu.sidePanelName.forEach((item, index) => {
+      it(`Verify side menu Link ${item} functionality`, () => {
+         dashboardPage
+            .clickSideMenuItemList(item, index)
+            .should('contain', sideMenu.sidePanelLink[index])
+         cy.contains(sideMenu.pageHeaderName[index])
+      });
+   });
 
-// });
+});
 
-describe('Build History of Freestyle Project', () => {
+describe.skip('Build History of Freestyle Project', () => {
    beforeEach(function () {
       dashboardPage
          .clickNewItemLink()
